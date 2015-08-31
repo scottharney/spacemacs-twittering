@@ -13,11 +13,16 @@
      (define-key twittering-mode-map (kbd "<tab>") 'twittering-goto-next-uri)
      ;; make evil leader key work in twittering-mode
      (add-to-list 'evil-leader/no-prefix-mode-rx "twittering-mode")
+     ;; display icons 
+     (setq twittering-icon-mode t)
      ;; the default size is 48 which I find too large
      ;; this requires imagemagick to be installed
-     (setq twittering-convert-fix-size 32)
-     (setq twittering-icon-mode t)
-     ;; This requires gzip. The icons are saved on ~/.twittering-mode-icons.gz, which can be changed by the variable twittering-icon-storage-file
-     (setq twittering-use-icon-storage t)
+     (if (executable-find "convert")
+         (setq twittering-convert-fix-size 32))
+     ;; This requires gzip. The icons are saved on ~/.twittering-mode-icons.gz,
+     ;; which can be changed by the variable twittering-icon-storage-file
+     (if (executable-find "gzip")
+         (setq twittering-use-icon-storage t))
      ;; requires GnuPG to be installed
-     (setq twittering-use-master-password t)))
+     (if (executable-find "gpg")
+         (setq twittering-use-master-password t))))
