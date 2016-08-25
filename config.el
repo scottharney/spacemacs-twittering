@@ -4,13 +4,19 @@
        :mode twittering-mode
        :bindings
        "g" nil
-       "g g" 'twittering-goto-first-status
        "c" 'twittering-current-timeline
        "C-u" 'twittering-scroll-down
        "/" 'evil-search-forward
        "?" 'evil-search-backward
        "n" 'evil-search-next
        "N" 'evil-serach-previous
+       "j" 'twittering-goto-next-status
+       "k" 'twittering-goto-previous-status 
+       "L" 'twittering-other-user-list-interactive
+       "gr" 'twittering-current-timeline
+       "gn" 'twittering-goto-next-status-of-user
+       "gv" 'twittering-other-user-timeline
+       "GV" ' twittering-visit-timeline
        [escape] 'twittering-edit-cancel-status
        "<tab>" 'twittering-goto-next-uri)
 
