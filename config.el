@@ -16,7 +16,7 @@
        "gr" 'twittering-current-timeline
        "gn" 'twittering-goto-next-status-of-user
        "gv" 'twittering-other-user-timeline
-       "GV" ' twittering-visit-timeline
+       "gV" ' twittering-visit-timeline
        [escape] 'twittering-edit-cancel-status
        "<tab>" 'twittering-goto-next-uri)
 
